@@ -22,4 +22,4 @@ prediction = model.predict(X_test)
 
 ---
 
-**Note**: Les fichiers `.pkl` ne sont pas versionés (voir `.gitignore`).
+**Note**: Les fichiers `.pkl` ne sont pas versionnés (voir `.gitignore`).
