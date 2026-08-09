@@ -14,11 +14,11 @@ import matplotlib.pyplot as plt
 
 # Configuration Streamlit
 st.set_page_config(page_title="Customer Churn Prediction", layout="wide")
-st.title("🎯 Customer Churn Prediction Dashboard")
+st.title("Customer Churn Prediction Dashboard")
 st.markdown("---")
 
 # Sidebar
-st.sidebar.title("📊 Navigation")
+st.sidebar.title("Navigation")
 page = st.sidebar.radio("Sélectionne une page:", 
                         ["Home", "Données", "Modèles", "Prédictions", "Résultats"])
 
@@ -53,19 +53,19 @@ results = load_results()
 
 # PAGE: Home
 if page == "Home":
-    st.header("👋 Bienvenue!")
+    st.header("Bienvenue!")
     st.markdown("""
     ### Ce projet démontre:
     
-    ✅ **Exploration de Données** - Analyse complète et visualisations
+    **Exploration de Données** - Analyse complète et visualisations
     
-    ✅ **Préparation des Données** - Nettoyage, normalisation, équilibrage
+    **Préparation des Données** - Nettoyage, normalisation, équilibrage
     
-    ✅ **Machine Learning** - Comparaison de multiples modèles
+    **Machine Learning** - Comparaison de multiples modèles
     
-    ✅ **Évaluation Robuste** - Métriques complètes et validation croisée
+    **Évaluation Robuste** - Métriques complètes et validation croisée
     
-    ✅ **Déploiement** - Dashboard interactif pour les prédictions
+    **Déploiement** - Dashboard interactif pour les prédictions
     
     ### Objectif:
     Prédire quels clients sont susceptibles de quitter l'entreprise (churn) 
@@ -86,7 +86,7 @@ if page == "Home":
 
 # PAGE: Données
 elif page == "Données":
-    st.header("📊 Exploration des Données")
+    st.header("Exploration des Données")
     
     if df is not None:
         st.subheader("Aperçu des Données")
@@ -109,15 +109,15 @@ elif page == "Données":
         with col3:
             st.metric("Valeurs Manquantes", df.isnull().sum().sum())
     else:
-        st.error("❌ Impossible de charger les données")
+        st.error("Impossible de charger les données")
 
 # PAGE: Modèles
 elif page == "Modèles":
-    st.header("🤖 Comparaison des Modèles")
+    st.header("Comparaison des Modèles")
     
     if results:
         # Tableau comparatif
-        st.subheader("📈 Performances des Modèles")
+        st.subheader("Performances des Modèles")
         
         comparison_data = []
         for model_name, model_results in results.items():
@@ -134,7 +134,7 @@ elif page == "Modèles":
         st.dataframe(comparison_df, use_container_width=True)
         
         # Graphiques
-        st.subheader("📊 Visualisations")
+        st.subheader("Visualisations")
         
         col1, col2 = st.columns(2)
         
@@ -167,21 +167,21 @@ elif page == "Modèles":
             plt.tight_layout()
             st.pyplot(fig)
     else:
-        st.error("❌ Résultats des modèles non disponibles")
+        st.error("Résultats des modèles non disponibles")
 
 # PAGE: Prédictions
 elif page == "Prédictions":
-    st.header("🔮 Faire une Prédiction")
+    st.header("Faire une Prédiction")
     
     if model is not None:
-        st.info("⚠️  Fonctionnalité à implémenter: Entrer les données d'un client pour obtenir une prédiction")
+        st.info("Fonctionnalité à implémenter: Entrer les données d'un client pour obtenir une prédiction")
         st.write("Cette section permettrait de faire des prédictions en temps réel sur de nouveaux clients.")
     else:
-        st.error("❌ Modèle non disponible")
+        st.error("Modèle non disponible")
 
 # PAGE: Résultats
 elif page == "Résultats":
-    st.header("📊 Détails des Résultats")
+    st.header("Détails des Résultats")
     
     if results:
         selected_model = st.selectbox("Sélectionne un modèle:", list(results.keys()))
@@ -220,7 +220,7 @@ elif page == "Résultats":
         report_df = pd.DataFrame(model_result['classification_report']).transpose()
         st.dataframe(report_df)
     else:
-        st.error("❌ Résultats non disponibles")
+        st.error("Résultats non disponibles")
 
 st.markdown("---")
-st.markdown("*Créé avec ❤️ par Andonia Inarmj | Data Science Project*")
+st.markdown("*Créé avec par Andonia Inarmj | Data Science Project*")
