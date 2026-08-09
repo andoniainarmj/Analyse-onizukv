@@ -1,4 +1,3 @@
-"""Streamlit Dashboard for Customer Churn Prediction"""
 
 import streamlit as st
 import pandas as pd
@@ -54,23 +53,7 @@ results = load_results()
 # PAGE: Home
 if page == "Home":
     st.header("Bienvenue!")
-    st.markdown("""
-    ### Ce projet démontre:
     
-    **Exploration de Données** - Analyse complète et visualisations
-    
-    **Préparation des Données** - Nettoyage, normalisation, équilibrage
-    
-    **Machine Learning** - Comparaison de multiples modèles
-    
-    **Évaluation Robuste** - Métriques complètes et validation croisée
-    
-    **Déploiement** - Dashboard interactif pour les prédictions
-    
-    ### Objectif:
-    Prédire quels clients sont susceptibles de quitter l'entreprise (churn) 
-    pour mettre en place des stratégies de rétention.
-    """)
     
     col1, col2, col3 = st.columns(3)
     with col1:
@@ -223,4 +206,3 @@ elif page == "Résultats":
         st.error("Résultats non disponibles")
 
 st.markdown("---")
-st.markdown("*Créé avec par Andonia Inarmj | Data Science Project*")
